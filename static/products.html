@@ -1,0 +1,13 @@
+<div id="productsContainer" class="row">
+	<div class="listItem">
+	<div class='col-sm-6 product' ng-repeat='product in products'>
+			<a href="#" class="thumbnail">
+				<img class="listImg" ng-click='setProduct(product_.id)' ng-src='../images/{{product.imagefile}}' />
+			</a>
+			<div class="caption">
+				<span class='prodName btn btn-default' ng-click='setProduct(product_.id)'>{{product.name}}</span>
+				<span class='price btn btn-primary'>{{product.price | currency}}</span>
+			</div>
+		</div>
+	</div>
+</div>

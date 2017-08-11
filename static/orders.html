@@ -1,0 +1,29 @@
+<div id="OrderContainer"  class="raw">
+	<div>
+	  <div class="listItem thumbnail" ng-repeat="order in orders">
+	  	  <div class="caption">
+				<h2 class="itemTitle">Order: #{{$index+1}}</h2>
+			    <p class="prodDesc">Placed: {{order.timestamp|date}}</p>
+			    <p class="status">status:{{order.status}}</p>
+		  </div><hr>
+		  <div class="listItem media" ng-repeat="item in order.items" ng-init="product=item.product[0]">
+			  <span class="media-left">
+			    <img class="listImg " ng-click="setProduct(product._id)" ng-src="../images/{{product.imagefile}}" alt='...' />
+			  </span>
+			  <div class="media-body">
+			    <h4 class="media-heading prodName">{{product.name}}</h4>
+			    <span>
+			      <span class="price">{{product.price|currency}}</span>
+			      <label class="quantity">{{item.quantity}}</label>
+			      <label class="quantity">Quantity</label>
+			    </span>
+			  </div>
+		  </div>
+		  <span class="button btn btn-primary" ng-click="setContent('products.html')">
+	      Continue Shopping
+	    </span>
+	  </div>
+  </div>
+</div>
+
+

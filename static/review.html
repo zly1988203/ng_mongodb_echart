@@ -1,0 +1,48 @@
+<div id="reviewContainer" class='raw'>
+  <div class="col-sm-6 col-md-4">
+      <div class="listItem thumbnail" ng-repeat="item in customer.cart" 
+        ng-init="product=item.product[0]">
+        <img class="listImg" ng-click="setProduct(product._id)"
+             ng-src="../images/{{product.imagefile}}" />
+        <div class="caption">
+          <h3 class="prodName">{{product.name}}</h3>
+          <div>
+            <span class="price label label-danger">Price:{{product.price|currency}}</span>
+            <span class="quantity label label-info">Quantity:{{item.quantity}}</span>
+          </div>
+          <div>
+            <span class="label label-danger">Shipping:{{shipping|currency}}</span>
+            <span class="label label-success">Total:{{cartTotal()|currency}}</span>
+          </div>
+        </div>
+      </div>
+  </div><hr>
+  <div class="twoTable">
+    <table align="left" class="review list-group">
+      <tr class='list-group-item'><th>Shipping:</th></tr>
+      <tr class='list-group-item'><td>{{customer.shipping[0].name}}</td></tr>
+      <tr class='list-group-item'><td>{{customer.shipping[0].address}}</td></tr>
+      <tr class='list-group-item'><td>{{customer.shipping[0].city}}</td></tr>
+      <tr class='list-group-item'><td>{{customer.shipping[0].state}}</td></tr>
+      <tr class='list-group-item'><td>{{customer.shipping[0].zip}}</td></tr>
+    </table>
+    <table class="review list-group">
+      <tr class='list-group-item'><th>Billing:</th></tr>
+      <tr class='list-group-item'><td>{{customer.billing[0].cardtype}} ending in</td></tr> 
+      <tr class='list-group-item'><td>{{customer.billing[0].number.slice(-5,-1)}}</td></tr>
+      <tr class='list-group-item'><td>{{customer.billing[0].address[0].name}}</td></tr>
+      <tr class='list-group-item'><td>{{customer.billing[0].address[0].address}}</td></tr>
+      <tr class='list-group-item'><td>{{customer.billing[0].address[0].city}}</td></tr>
+      <tr class='list-group-item'><td>{{customer.billing[0].address[0].state}}</td></tr>
+      <tr class='list-group-item'><td>{{customer.billing[0].address[0].zip}}</td></tr>
+    </table>
+  </div>
+  <div>
+    <span class="button btn btn-success" ng-click="makePurchase()">
+      Make Purchase
+    </span>
+    <span class="button btn btn-primary" ng-click="setContent('products.html')">
+      Continue Shopping
+    </span>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Shopping Cart</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/cart_styles.css" />
+	<link rel="stylesheet" type="text/css" href="/static/js/dist/highcharts-ng.css">
+	<link rel="stylesheet" href="../static/js/nvd3/nv.d3.css">
+
+
+</head>
+<body>
+	<div class="container"  ng-controller='shoppingController'>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<h1 class="navbar-header">Ｍｙ　Ｓｔｏｒｅ</h1>
+			<div class="navbar-text navbar-right" id='bar'>
+				<span class="navbar-link orders" ng-click='setContent("products.html")'>home</span>
+				<span>&nbsp;|&nbsp;</span>
+				<span  class="navbar-link" id="cartLink" ng-click='setContent("cart.html")'>
+					 ({{customer.cart.length?customer.cart.length:0}})
+				</span>
+				<img src="/images/cart.png" alt="image" />
+				<span>&nbsp;|&nbsp;</span>
+				<span class="navbar-link orders" ng-click='setContent("orders.html")'>Orders</span>
+				<span>&nbsp;|&nbsp;</span>
+				<span class="navbar-link orders" ng-click='setContent("hChart.html")'>chart</span>
+			</div>
+		</div>
+
+		<div id='main'>
+			<div ng-include='content'></div>
+
+		</div>
+	</div>
+
+	<script src="/static/js/angular.min.js"></script>
+	<script src="/static/js/dist/highstock.src.js"></script>
+	<script src="/static/js/dist/highcharts-ng.js"></script>
+	<script src="../static/js/nvd3/d3.js"></script>
+	<script src="../static/js/nvd3/nv.d3.js"></script>
+	<script src="/static/js/nvd3/angular-nvd3.js"></script>
+	<script src="/static/js/cart_app.js"></script>
+
+
+</body>
+</html>

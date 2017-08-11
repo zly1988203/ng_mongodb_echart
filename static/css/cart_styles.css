@@ -1,0 +1,85 @@
+html,body{
+	padding-top: 70px;
+	padding-bottom: 20px;
+}
+.navbar-fixed-top{
+	padding:0 3%;
+}
+.navbar-header{
+	text-align: center;
+	width: 100%;
+}
+.navbar-text{
+	margin-top: 0;
+    margin-bottom: 8px;
+}
+.navbar-right{
+	float: right!important;
+}
+.navbar-right span{
+	cursor: pointer;
+}
+.navbar-right span:hover{
+	text-decoration: underline;
+}
+#bar img{
+	width:20px;
+	height: auto;
+}
+.caption img{
+	width: 30px;
+    height: auto;
+}
+
+#reviewContainer img{
+	width:270px;
+	height: auto;
+}
+
+#reviewContainer .caption{
+	width: 100%;
+	text-align: center;
+}
+#reviewContainer .caption div{
+	margin-top: 5px;
+}
+#reviewContainer .caption span{
+	display: inline-block;
+	
+	width: 32%;
+}
+#reviewContainer .twoTable{
+	width: 100%;
+}
+@media all and (min-width:768px){
+	#reviewContainer .twoTable{
+		display: inline-block;
+		width: 50%;
+	}
+}
+
+#reviewContainer .twoTable table{
+	width: 50%;
+}
+#OrderContainer img{
+	width: 80px;
+	height:80px;
+}
+
+#OrderContainer .caption{
+	width: 100%;
+	text-align: center;
+	
+}
+#OrderContainer .listItem .button{
+	margin-top: 20px;
+}
+
+
+.thumbnail>img{
+	height: 267px;
+}
+
+.product {
+	padding-top: 10px;
+}
